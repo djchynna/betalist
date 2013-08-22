@@ -1,0 +1,131 @@
+@import bourbon/bourbon
+@import grid-settings
+@import neat/neat
+
+$font-proxima-nova: "proxima-nova", $helvetica
+$font-museo-sans: "museo-sans", $helvetica
+
+body
+  margin: 0
+  padding: 0
+  font: normal 14px / 1.25 $font-proxima-nova
+
+h1,h2,h3,h4,h5,h6
+  margin: 0
+  padding: 0
+  font: bold 16px / 1.2 $font-museo-sans
+
+h1
+  font-size: 32px
+
+h2
+  font-size: 28px
+
+h3
+  font-size: 24px
+
+h4
+  font-size: 20px
+
+h5
+  font-size: 18px
+
+.container
+  +outer-container
+  padding: 0 15px
+
+.txt-center
+  text-align: center
+
+.section-related
+  color: #fff
+  padding: 70px 0 40px
+  background: #02C6CA
+
+.list-related
+  +outer-container
+  margin: 0
+  padding: 30px 0
+  list-style: none
+  li
+    padding: 15px 0
+    +span-columns(4)
+  a
+    display: block
+    cursor: pointer
+    color: #fff
+    text-decoration: none
+  .img
+    +position(relative)
+    +span-columns(6)
+    img
+      padding-top: 10px
+      border-radius: 3px
+      border: 3px solid #fff
+      background: #fff
+      +fill-parent
+    i
+      float: left
+      width: 4px
+      height: 4px
+      line-height: 4px
+      margin: 0 10px
+      background: #FFBF00
+      border-radius: 100%
+      +position(absolute, 5px 0 0 0)
+    i:before,
+    i:after
+      +position(absolute, 0 100% 0 0)
+      content: ' '
+      float: left
+      width: 4px
+      height: 4px
+      margin: 0 2px
+      line-height: 4px
+      background: #D90000
+      border-radius: 100%
+    i:after
+      right: auto
+      left: 100%
+      background: #00B285
+  .ads .img
+    padding: 10px
+    background: #eee
+    border-radius: 3px
+    img
+      padding-top: 0
+      border: none
+      background: #eee
+    h6
+      font-size: 12px
+  .info
+    padding: 10px 0
+    +span-columns(6)
+  h6
+    margin: 0 5px
+    font: normal 14px $font-museo-sans
+  p
+    margin: 5px 0 5px 5px
+    color: #014343
+    +transition(all 150ms)
+  a:hover p
+    color: #fff
+
++media($screen)
+  .list-related
+    li
+      +omega(3n)
+
+
++media($tablet)
+  .list-related
+    li
+      +span-columns(4)
+      +omega(2n)
+
+
++media($mobile)
+  .list-related
+    li
+      +span-columns(4)
+      +omega(1n)
